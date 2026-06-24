@@ -74,21 +74,41 @@ export default function Chatbot() {
     setIsTyping(true);
 
     try {
-      if (!VITE_GEMINI_API_KEY) {
-        throw new Error("API key not configured");
-      }
-
-      const genAI = new GoogleGenerativeAI(VITE_GEMINI_API_KEY);
-      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
-
-      // Construct a simple chat history string for Gemini context
       const chatHistoryContext = updatedMessages
         .map((m) => `${m.role === "user" ? "User" : "Windy"}: ${m.text}`)
         .join("\n");
 
       const prompt = `${systemInstruction}\n\nChat History:\n${chatHistoryContext}\n\nWindy:`;
-      const result = await model.generateContent(prompt);
-      const replyText = result.response.text();
+      let replyText = "";
+
+      // Check if we have a valid local API key for direct client-side calling (local dev fallback)
+      const hasLocalKey = VITE_GEMINI_API_KEY && 
+                          VITE_GEMINI_API_KEY.startsWith("AIzaSy") && 
+                          VITE_GEMINI_API_KEY !== "AIzaSyC7jDIMrofqfgB3wNxhceJ6UCJh8PHEYJE";
+
+      if (hasLocalKey) {
+        const genAI = new GoogleGenerativeAI(VITE_GEMINI_API_KEY);
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const result = await model.generateContent(prompt);
+        replyText = result.response.text();
+      } else {
+        // Secure production route using serverless backend proxy
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ prompt }),
+        });
+
+        if (!response.ok) {
+          const errData = await response.json().catch(() => ({}));
+          throw new Error(errData.error || `HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        replyText = data.reply;
+      }
 
       setMessages((prev) => [...prev, { role: "bot", text: replyText }]);
     } catch (error) {

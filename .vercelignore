@@ -1,0 +1,15 @@
+# Vercel Ignore File
+
+# Ignore Firebase functions directory to prevent Vercel from treating it as serverless functions
+/functions
+
+# Ignore local agent settings/skills
+/.agents
+
+# Ignore local firebase configuration cache
+/.firebase
+
+# Ignore env files and logs
+.env
+*.log
+firebase-debug.log

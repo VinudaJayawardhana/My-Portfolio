@@ -1,6 +1,6 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   // CORS Headers
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -42,4 +42,4 @@ module.exports = async (req, res) => {
     console.error("Backend Gemini Error:", error);
     res.status(500).json({ error: error.message || "Failed to generate content" });
   }
-};
+}

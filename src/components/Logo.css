@@ -1,0 +1,84 @@
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Glassmorphism Icon Wrapper */
+.logo-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* Dynamic colors using data-theme inheritance */
+.logo-icon {
+  color: #10b981; /* Default clean green prompt color */
+  transition: transform 0.3s ease;
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #1f2937; /* Dark text for light mode */
+  line-height: 1.2;
+}
+
+/* Linear Gradient for a premium developer pop */
+.logo-highlight {
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-subtitle {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  letter-spacing: 0.05em;
+}
+
+/* Hover Interactive Effects */
+.logo-brand:hover .logo-icon-wrapper {
+  background: rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.logo-brand:hover .logo-icon {
+  transform: scale(1.05);
+}
+
+/* ---- Dark Mode Adaptations ---- */
+[data-theme='dark'] .logo-icon-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .logo-title {
+  color: #f9fafb; /* White text for dark mode */
+}
+
+[data-theme='dark'] .logo-subtitle {
+  color: #9ca3af;
+}
+
+[data-theme='dark'] .logo-brand:hover .logo-icon-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+}

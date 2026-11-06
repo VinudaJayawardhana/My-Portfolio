@@ -38,6 +38,51 @@ const Projects = ({ setSelectedProject }) => {
 
   const staticProjectsData = [
     {
+      id: 'static-slt-1',
+      title: 'Trilingual Fibre Onboarding & Customer Eligibility Portal',
+      category: 'web',
+      tags: ['React.js', 'Node.js', 'Firebase', 'SLT-MOBITEL'],
+      shortDesc: 'Developed an intuitive, trilingual (Sinhala, Tamil, English) self-service web application enabling telecom customers to check fibre eligibility and onboard seamlessly.',
+      github: 'https://github.com/VinudaJayawardhana',
+      live: '#',
+      details: {
+        problem: 'SLT-MOBITEL customers faced language barriers and complex manual processes when applying for fibre broadband connections, causing delays and high support overhead.',
+        solution: 'Built a trilingual self-service portal supporting Sinhala, Tamil, and English — allowing customers to check eligibility and complete onboarding without agent assistance.',
+        achievements: ['Full trilingual (SI/TA/EN) UI support', 'Automated customer eligibility checking', 'Reduced onboarding time significantly', 'Deployed for SLT-MOBITEL production use'],
+        architecture: 'React.js Frontend (Trilingual i18n) → Node.js API → SLT-MOBITEL Backend Systems.'
+      }
+    },
+    {
+      id: 'static-slt-2',
+      title: 'Real-Time Server Management Dashboard — SLTMobitel Infrastructure Control',
+      category: 'web',
+      tags: ['React.js', 'WebSockets', 'Node.js', 'SLT-MOBITEL'],
+      shortDesc: 'Built a full-stack, real-time Server Infrastructure Management Dashboard for SLTMobitel to monitor, control, and analyse enterprise server health and performance metrics.',
+      github: 'https://github.com/VinudaJayawardhana',
+      live: '#',
+      details: {
+        problem: 'SLTMobitel\'s infrastructure teams lacked a centralized, real-time view of server health, making it difficult to detect and respond to outages or performance degradation quickly.',
+        solution: 'Engineered a full-stack dashboard with live WebSocket feeds displaying server CPU, memory, uptime, and alert statuses across the enterprise infrastructure.',
+        achievements: ['Real-time server health monitoring', 'Live alert and incident tracking', 'Full-stack architecture with WebSocket integration', 'Associated with Sri Lanka Telecom'],
+        architecture: 'React.js Dashboard → WebSocket Server (Node.js) → SLT Infrastructure APIs → Server Fleet.'
+      }
+    },
+    {
+      id: 'static-slt-3',
+      title: 'SLT-Mobitel Enterprise Inventory & Material Control Platform',
+      category: 'web',
+      tags: ['React.js', 'Node.js', 'Firebase', 'SLT-MOBITEL'],
+      shortDesc: 'Developed an enterprise-grade web application to digitize, monitor, and streamline material and inventory management operations across SLT-Mobitel divisions.',
+      github: 'https://github.com/VinudaJayawardhana',
+      live: '#',
+      details: {
+        problem: 'SLT-Mobitel\'s inventory and material management was handled through fragmented manual processes, leading to inaccurate stock records and slow procurement cycles.',
+        solution: 'Built a centralized enterprise platform to digitize inventory tracking, monitor stock levels in real time, and streamline material requests across organizational units.',
+        achievements: ['Digitized end-to-end inventory workflow', 'Real-time stock level monitoring', 'Streamlined material requisition process', 'Associated with Sri Lanka Telecom'],
+        architecture: 'React.js Frontend → Node.js REST API → Firebase Database → SLT-Mobitel Enterprise Systems.'
+      }
+    },
+    {
       id: 'static-1',
       title: 'iconX Mobile Store System',
       category: 'web',

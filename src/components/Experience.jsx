@@ -56,6 +56,14 @@ const Experience = () => {
 
   const staticJourney = [
     {
+      id: 'static-exp-0',
+      type: 'work',
+      role: 'Software Engineer — Intern',
+      company: 'Sri Lanka Telecom · SLT-MOBITEL (Colombo, Sri Lanka)',
+      period: 'Jul 2026 - Present',
+      desc: 'Collaborating with engineering teams at SLT-MOBITEL to develop, test, and optimize enterprise software solutions. Focused on Software Design and Web Engineering, contributing to mission-critical internal platforms serving thousands of telecom customers across Sri Lanka.'
+    },
+    {
       id: 'static-exp-1',
       type: 'work',
       role: 'Freelance Developer',

@@ -53,7 +53,7 @@ const About = () => {
             
             <div className="profile-info-block">
               <h3 className="profile-name">Vinuda Jayawardhana</h3>
-              <p className="profile-role text-gradient">Software Engineering Undergraduate</p>
+              <p className="profile-role text-gradient">Computer Science Undergraduate</p>
               <p className="profile-location">📍 Ragama, Sri Lanka</p>
               
               {/* Refined Grab My CV Button */}

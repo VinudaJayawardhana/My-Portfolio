@@ -22,7 +22,7 @@ const PARTICLES = [
 
 const Hero = () => {
   const titles = [
-    'Software Engineering Undergraduate',
+    'Computer Science Undergraduate',
     'Full-Stack Developer',
     'Mobile App Developer',
     'Freelance Programmer'
